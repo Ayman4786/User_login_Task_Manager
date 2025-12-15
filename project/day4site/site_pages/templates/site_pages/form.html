@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+  </head>
+  <body>
+
+    <h1>Welcome To The Form Page</h1>
+    <h2>You can Save your tasks here</h2>
+
+    <p>
+      want to go back to dashboard?
+      <a href="{% url 'homepage' %}">Dashboard</a>
+    </p>
+
+    <!-- SEARCH FORM -->
+    <form method="GET">
+      <input type="text" name="q" placeholder="Search tasks..." value="{{ request.GET.q }}">
+      <button type="submit">Search</button>
+    </form>
+    <hr>
+
+    <!-- ADD TASK FORM -->
+    <form method="POST">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <button type="submit">Submit</button>
+    </form>
+
+    <!-- SUCCESS MESSAGES -->
+    {% if messages %}
+      {% for message in messages %}
+        <p style="color: green">{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+
+    <!-- DISPLAY TASKS -->
+    {% for task in tasks %}
+      <h3>
+        {% if task.is_completed %}
+          <p><del>{{ task.title }}</del></p>
+          <p><del>{{ task.description }}</del></p>
+        {% else %}
+          <p>{{ task.title }}</p>
+          <p>{{ task.description }}</p>
+        {% endif %}
+      </h3>
+
+      <!-- EDIT -->
+      <a href="{% url 'update-task' task.id %}">✏️</a>
+
+      <!-- COMPLETE / UNDO -->
+      {% if task.is_completed %}
+        <a href="{% url 'complete-task' task.id %}">↩️</a>
+      {% else %}
+        <a href="{% url 'complete-task' task.id %}">✔️</a>
+      {% endif %}
+
+      <!-- DELETE -->
+      <a href="{% url 'delete-task' task.id %}"
+        onclick="return confirm('Are you sure you want to delete this task?');">🗑️</a>
+
+      <hr />
+    {% endfor %}
+
+    <!-- PAGINATION -->
+    <div style="margin-top: 20px; font-size: 18px;">
+      {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}">Previous</a>
+      {% endif %}
+
+      &nbsp; Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }} &nbsp;
+
+      {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}">Next</a>
+      {% endif %}
+    </div>
+
+  </body>
+</html>

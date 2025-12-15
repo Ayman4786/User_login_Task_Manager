@@ -1,0 +1,37 @@
+{% extends 'site_pages/base.html' %} 
+{% block title %} 
+Edit Profile
+{% endblock %}
+{% block content %}
+
+<h1>Edit Profile</h1>
+
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+
+    {{ user_form.as_p }}
+
+    <!-- Show Current Profile Image -->
+    {% if profile_form.instance.image %}
+        <img src="{{ profile_form.instance.image.url }}" 
+             alt="Profile Photo" 
+             style="width:120px; height:120px; border-radius:50%; object-fit:cover; border:2px solid white;">
+        <br><br>
+    {% endif %}
+
+    <!-- Upload Field -->
+    {{ profile_form.image.label_tag }}
+    {{ profile_form.image }}
+    <br><br>
+
+    <!-- Remove Photo Checkbox -->
+    <label>
+        {{ profile_form.remove_photo }} Remove current photo
+    </label>
+
+    <br><br>
+
+    <button type="submit">Save</button>
+</form>
+
+{% endblock %}

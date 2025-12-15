@@ -1,0 +1,15 @@
+{% extends 'site_pages/base.html' %} 
+{% block title %} 
+Delete Profile
+{% endblock %}
+{%block content %}
+<h1>Delete Account</h1>
+<p>This action cannot be undone.</p>
+
+<form method="POST">
+  {% csrf_token %}
+  <button type="submit">Delete My Account</button>
+</form>
+
+{% endblock %}
+    

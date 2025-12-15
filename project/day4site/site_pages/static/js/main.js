@@ -1,0 +1,1 @@
+console.log("This is js for my site")
