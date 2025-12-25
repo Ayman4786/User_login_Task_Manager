@@ -130,8 +130,8 @@ EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = "khanayman4786@gmail.com"            # your Gmail
-EMAIL_HOST_PASSWORD = "usuw uazf zxfq nmjt"
+EMAIL_HOST_USER = ""            # your Gmail
+EMAIL_HOST_PASSWORD = ""        # your google app password
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
 MEDIA_URL = "/media/"
