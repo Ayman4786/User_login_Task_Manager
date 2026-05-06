@@ -1,0 +1,23 @@
+{% extends 'site_pages/base.html' %} 
+{% block title %} 
+Profile 
+{% endblock %}
+{%block content %}
+<h1>My Profile</h1>
+
+
+{% if user.userprofile.image %}
+    <img src="{{ user.userprofile.image.url }}" width="150" style="border-radius: 8px;">
+{% else %}
+    <img src="/media/profile_pics/default.png" width="150" style="border-radius: 8px;">
+{% endif %}
+
+<p><strong>Username:</strong> {{ user.username }}</p>
+<p><strong>Email:</strong> {{ user.email }}</p>
+
+<h2><a href="{% url 'edit-profilepage' %}">Edit Profile</a></h2>
+<h2><a href="{% url 'logoutpage' %}">Logout</a></h2>
+<h2><a href="{% url 'delete-profilepage' %}">Delete Profile</a></h2>
+
+
+{% endblock %}  

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+{% load static%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <nav class="navbar">
+
+    <div class="logo">
+        TaskManager
+    </div>
+
+    <div class="nav-links">
+        <a href="/home">Home</a> 
+        <a href="/about">About</a> 
+        <a href="/contact">Contact</a> 
+        <a href="/form">Task</a> 
+        <a href="/profile">Profile</a> 
+        <a href="/staff/dashboard">Staff Dashboard</a> 
+        <a href="/dashboard">Dashboard</a> 
+    </div>
+
+</nav>
+
+<section class="hero">
+
+    <h1>
+        Welcome back, {{ request.user.username }}
+    </h1>
+
+    <p>
+        Organize your daily work, track completed tasks,
+        and manage productivity efficiently using your
+        Django task manager.
+    </p>
+
+    <div class="hero-buttons">
+
+        <a href="/form" class="btn primary-btn">
+            View Tasks
+        </a>
+
+        <a href="/profile" class="btn secondary-btn">
+            Profile
+        </a>
+
+    </div>
+
+</section>
+</body>
+</html>

@@ -1,0 +1,207 @@
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Inter', sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+    padding: 40px 20px;
+}
+
+/* Main Container */
+.container{
+    max-width: 750px;
+    margin: auto;
+    background: white;
+    padding: 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* Heading */
+h1{
+    font-size: 2.2rem;
+    margin-bottom: 10px;
+    color: #0f172a;
+}
+
+.subtitle{
+    color: #64748b;
+    margin-bottom: 30px;
+}
+
+/* Dashboard link */
+.back-link{
+    display: inline-block;
+    margin-bottom: 25px;
+    text-decoration: none;
+    color: #2563eb;
+    font-weight: 500;
+}
+
+.back-link:hover{
+    text-decoration: underline;
+}
+
+/* Search */
+.search-box{
+    display: flex;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.search-box input{
+    flex: 1;
+}
+
+/* Form */
+.task-form{
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.task-actions{
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
+
+.btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    padding: 10px 16px;
+
+    border-radius: 10px;
+
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 15px;
+
+    transition: 0.2s ease;
+}
+
+/* Edit */
+.edit-btn{
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.edit-btn:hover{
+    transform: translateY(-2px);
+}
+
+/* Complete */
+.complete-btn{
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.complete-btn:hover{
+    transform: translateY(-2px);
+}
+
+/* Undo */
+.undo-btn{
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.undo-btn:hover{
+    transform: translateY(-2px);
+}
+
+/* Delete */
+.delete-btn{
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+.delete-btn:hover{
+    transform: translateY(-2px);
+}
+
+/* Labels */
+label{
+    font-weight: 600;
+    margin-bottom: 6px;
+    display: block;
+}
+
+/* Inputs */
+input,
+textarea{
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 10px;
+    outline: none;
+    font-size: 15px;
+    transition: 0.2s ease;
+    background: #fff;
+}
+
+input:focus,
+textarea:focus{
+    border-color: #2563eb;
+    box-shadow: 0 0 0 4px rgba(37,99,235,0.15);
+}
+
+textarea{
+    resize: vertical;
+    min-height: 160px;
+}
+
+/* Buttons */
+button{
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: 600;
+    transition: 0.2s ease;
+}
+
+button:hover{
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+/* Pagination */
+.pagination{
+    margin-top: 25px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Responsive */
+@media(max-width:768px){
+
+    .container{
+        padding: 25px;
+    }
+
+    h1{
+        font-size: 1.8rem;
+    }
+
+    .search-box{
+        flex-direction: column;
+    }
+
+    button{
+        width: 100%;
+    }
+}

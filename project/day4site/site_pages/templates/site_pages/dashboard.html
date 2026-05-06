@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Staff Dashboard</title>
+</head>
+<body>
+
+<h1>Staff Dashboard</h1>
+
+<p><strong>Total Users:</strong> {{ total_users }}</p>
+<p><strong>Total Tasks:</strong> {{ total_tasks }}</p>
+
+
+
+
+
+  {% for user in users %}
+    <tr>
+      <td>{{ forloop.counter }}</td>
+      <td>{{ user.username }}</td>
+      <td>{{ user.task_count }}</td>
+    </tr>
+  {% empty %}
+  {% endfor %}
+
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>403 Forbidden</title>
+
+    <style>
+
+        body{
+            margin: 0;
+            height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            background: #f8fafc;
+
+            font-family: Arial, sans-serif;
+        }
+
+        .error-container{
+            text-align: center;
+        }
+
+        h1{
+            font-size: 120px;
+            margin: 0;
+            color: #dc2626;
+        }
+
+        h2{
+            margin-top: -10px;
+            font-size: 32px;
+            color: #0f172a;
+        }
+
+        p{
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        a{
+            text-decoration: none;
+            background: #2563eb;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        a:hover{
+            background: #1d4ed8;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div class="error-container">
+
+        <h1>403</h1>
+
+        <h2>Access Forbidden</h2>
+
+        <p>
+            You do not have permission to access this page.
+        </p>
+
+        <a href="{% url 'homepage' %}">
+            Back to Home
+        </a>
+
+    </div>
+
+</body>
+</html>

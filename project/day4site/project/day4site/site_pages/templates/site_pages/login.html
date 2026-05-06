@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  </head>
+
+  <body>
+    <div class="auth-container">
+      <div class="auth-box">
+        <h2>Login</h2>
+
+        {% if messages %}
+          {% for message in messages %}
+            <p class="errorlist">{{ message }}</p>
+          {% endfor %}
+        {% endif %}
+
+        <form method="POST">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Login</button>
+        </form>
+
+        <div class="auth-links">
+          <p>
+            Don’t have an account?
+            <a href="{% url 'signuppage' %}">Signup here</a>
+          </p>
+          <p>
+            <a href="{% url 'password_reset' %}">Forgot Password?</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

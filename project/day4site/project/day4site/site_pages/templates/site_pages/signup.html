@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+  </head>
+
+  <body>
+    <div class="auth-container">
+      <div class="auth-box">
+        <h2>Create Account</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+          {{ form.as_p }}
+          <button type="submit">Sign Up</button>
+        </form>
+
+        <div class="auth-links">
+          <p>
+            Already have an account?
+            <a href="{% url 'loginpage' %}">Login here</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
